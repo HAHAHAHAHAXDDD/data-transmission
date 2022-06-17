@@ -69,27 +69,27 @@ def infogain(x, y):
     return inf
 
 #4
-# zoo = zoo.iloc[:, :-1]
-# zoo = zoo.iloc[:, 1:]
-# scores = test.mutual_info_classif(zoo, zoo['hair'], random_state=0)
-# scores = pd.Series(scores)
-# scores.index = zoo.columns
-# scores = scores.sort_values(ascending=False)
-# zoo = zoo.iloc[:, :-1]
-# zoo = zoo.iloc[:, 1:]
+zoo = zoo.iloc[:, :-1]
+zoo = zoo.iloc[:, 1:]
+scores = test.mutual_info_classif(zoo, zoo['hair'], random_state=0)
+scores = pd.Series(scores)
+scores.index = zoo.columns
+scores = scores.sort_values(ascending=False)
+zoo = zoo.iloc[:, :-1]
+zoo = zoo.iloc[:, 1:]
 
 #4
-# scores=[]
-# zoo = zoo.loc[:, zoo.columns != "animal"]
-# zoo = zoo.loc[:, zoo.columns != "legs"]
-# zoo = zoo.loc[:, zoo.columns != "type"]
-# for column in zoo:
-#     scores.append(infogain(zoo[column], zoo['hair']))
-# scores = np.array(scores)
-# scores = pd.Series(scores)
-# scores.index = zoo.columns
-# scores = scores.sort_values(ascending=False)
-# print(scores)
+scores=[]
+zoo = zoo.loc[:, zoo.columns != "animal"]
+zoo = zoo.loc[:, zoo.columns != "legs"]
+zoo = zoo.loc[:, zoo.columns != "type"]
+for column in zoo:
+    scores.append(infogain(zoo[column], zoo['hair']))
+scores = np.array(scores)
+scores = pd.Series(scores)
+scores.index = zoo.columns
+scores = scores.sort_values(ascending=False)
+print(scores)
 
     
 
